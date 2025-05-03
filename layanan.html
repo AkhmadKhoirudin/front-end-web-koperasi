@@ -49,11 +49,11 @@
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-4">
                     <div>
-                        <img src="480282353_937473955167353_7231620884552808062_n__1_-removebg-preview.png" alt="Logo KSSP" class="w-[60px] h-[50px] rounded-full">
+                        <img src="logonav.png" alt="Logo KSSP" class="w-[60px] h-[50px] rounded-full">
                     </div>
                     <div class="hidden md:flex items-center space-x-1">
-                        <span class="text-xl font-bold text-blue-600">Koperasi</span>
-                        <span class="text-xl font-bold text-gray-800">KSSP</span>
+                        <span class="text-xl font-bold text-blue-600">KSPPS</span>
+                        <span class="text-xl font-bold text-gray-800">PMA</span>
                     </div>
                 </div>
                 
@@ -98,7 +98,7 @@
     <!-- Main Content -->
     <main class="max-w-6xl mx-auto px-4 py-12">
         <!-- Simpanan Section -->
-        <section class="mb-20">
+        <section id="Simpanan" class="mb-20">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-2">PRODUK DAN LAYANAN SIMPANAN</h2>
                 <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
@@ -192,7 +192,7 @@
         </section>
 
         <!-- Pembiayaan Section -->
-        <section>
+        <section id="Pembiayaan">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-2">PRODUK PEMBIAYAAN</h2>
                 <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
@@ -258,7 +258,6 @@
             </div>
         </div>
     </div>
-
     <!-- TAKOPNAS Popup -->
     <div id="popup2" class="popup">
         <div class="popup-content">
@@ -268,6 +267,7 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
+
             <div class="space-y-4">
                 <div>
                     <h4 class="font-semibold text-gray-800">Bentuk Akad : Mudharabah Muthlaqah</h4>
@@ -284,7 +284,6 @@
             </div>
         </div>
     </div>
-
     <!-- TAQORUB Popup -->
     <div id="popup3" class="popup">
         <div class="popup-content">
@@ -310,6 +309,83 @@
             </div>
         </div>
     </div>
+    <!-- WADIAH YAD DHAMANAH Card -->
+    <div id="popup4" class="popup">
+        <div class="popup-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-gray-800">TAQORUB (Tabungan Qurban)</h3>
+                <button onclick="closePopup('popup4')" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <h4 class="font-semibold text-gray-800">Bentuk Akad : Mudharabah Muthlaqah</h4>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800">Ketentuan :</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600 mt-2">
+                        <li>Taqorub adalah jenis tabungan sukarela dengan akad Mudharabah Muthlaqah di mana shahibul maal menitipkan dananya untuk pembelian hewan qurban dan pihak manajemen diberikan hak kelola secara mutlak selama kurun waktu tertentu sesuai dengan akad pembukaan rekening dan dapat diperpanjang.</li>
+                        <li>Anggota dapat menyetorkan dananya kapan saja/secara online melalui Perambabulan Mobile atau selama jam kantor buka dan produk ini tidak bisa ditarik sewaktu waktu kecuali menjelang hari raya Iduladha dan apabila dana telah mencukupi untuk pembelian hewan kurban sesuai akad pembukaan rekening dan bisa diperpanjang secara otomatis bila dana tersebut belum mencukupi.</li>
+                        <li>Taqorub ini akan diberikan jasa bagi hasil setiap akhir bulan sesuai dengan porsi nisbah bagi hasil sesuai kesepakatan antara shahibul maal dengan mudharib ketika pembukaan rekening.</li>
+                        <li>Besarnya porsi jasa bagi hasil akan dituangkan dalam penawaran ilustrasi tabel Jasa Bagi Hasil dari hasil perhitungan porsi bagi hasil oleh keputusan pengurus atau manajer dan sewaktu waktu berubah tanpa pemberitahuan.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- WADIAH YAD AMANAH Card -->
+    <div id="popup5" class="popup">
+        <div class="popup-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-gray-800">TAQORUB (Tabungan Qurban)</h3>
+                <button onclick="closePopup('popup5')" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <h4 class="font-semibold text-gray-800">Bentuk Akad : Mudharabah Muthlaqah</h4>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800">Ketentuan :</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600 mt-2">
+                        <li>Taqorub adalah jenis tabungan sukarela dengan akad Mudharabah Muthlaqah di mana shahibul maal menitipkan dananya untuk pembelian hewan qurban dan pihak manajemen diberikan hak kelola secara mutlak selama kurun waktu tertentu sesuai dengan akad pembukaan rekening dan dapat diperpanjang.</li>
+                        <li>Anggota dapat menyetorkan dananya kapan saja/secara online melalui Perambabulan Mobile atau selama jam kantor buka dan produk ini tidak bisa ditarik sewaktu waktu kecuali menjelang hari raya Iduladha dan apabila dana telah mencukupi untuk pembelian hewan kurban sesuai akad pembukaan rekening dan bisa diperpanjang secara otomatis bila dana tersebut belum mencukupi.</li>
+                        <li>Taqorub ini akan diberikan jasa bagi hasil setiap akhir bulan sesuai dengan porsi nisbah bagi hasil sesuai kesepakatan antara shahibul maal dengan mudharib ketika pembukaan rekening.</li>
+                        <li>Besarnya porsi jasa bagi hasil akan dituangkan dalam penawaran ilustrasi tabel Jasa Bagi Hasil dari hasil perhitungan porsi bagi hasil oleh keputusan pengurus atau manajer dan sewaktu waktu berubah tanpa pemberitahuan.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TAHARA Card -->
+    <div id="popup6" class="popup">
+        <div class="popup-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-gray-800">TAQORUB (Tabungan Qurban)</h3>
+                <button onclick="closePopup('popup6')" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <h4 class="font-semibold text-gray-800">Bentuk Akad : Mudharabah Muthlaqah</h4>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800">Ketentuan :</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600 mt-2">
+                        <li>Taqorub adalah jenis tabungan sukarela dengan akad Mudharabah Muthlaqah di mana shahibul maal menitipkan dananya untuk pembelian hewan qurban dan pihak manajemen diberikan hak kelola secara mutlak selama kurun waktu tertentu sesuai dengan akad pembukaan rekening dan dapat diperpanjang.</li>
+                        <li>Anggota dapat menyetorkan dananya kapan saja/secara online melalui Perambabulan Mobile atau selama jam kantor buka dan produk ini tidak bisa ditarik sewaktu waktu kecuali menjelang hari raya Iduladha dan apabila dana telah mencukupi untuk pembelian hewan kurban sesuai akad pembukaan rekening dan bisa diperpanjang secara otomatis bila dana tersebut belum mencukupi.</li>
+                        <li>Taqorub ini akan diberikan jasa bagi hasil setiap akhir bulan sesuai dengan porsi nisbah bagi hasil sesuai kesepakatan antara shahibul maal dengan mudharib ketika pembukaan rekening.</li>
+                        <li>Besarnya porsi jasa bagi hasil akan dituangkan dalam penawaran ilustrasi tabel Jasa Bagi Hasil dari hasil perhitungan porsi bagi hasil oleh keputusan pengurus atau manajer dan sewaktu waktu berubah tanpa pemberitahuan.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
@@ -403,6 +479,16 @@
                 closePopup(event.target.id);
             }
         }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
     </script>
 </body>
 </html>
