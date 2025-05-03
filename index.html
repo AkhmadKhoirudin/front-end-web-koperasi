@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koperasi KSSP - Solusi Keuangan Berkualitas</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+            html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(59, 130, 246, 0.6);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+         /* Mobile Menu */
+         .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <div>
+                        <img  src="480282353_937473955167353_7231620884552808062_n__1_-removebg-preview.png" alt="Logo KSSP" class="w-[60px] h-[50px] rounded-full">
+                        
+                    </div>
+                    <div class="hidden md:flex items-center space-x-1">
+                        <span class="text-xl font-bold text-blue-600">KSPPS </span>
+                        <span class="text-xl font-bold text-gray-800">PMA</span>
+                    </div>
+                </div>
+                
+                <!-- Menu Desktop --> 
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-blue-600 font-medium">Beranda</a>
+                    <a href="layanan.html" class="text-gray-600 hover:text-blue-600 transition">Layanan</a>
+                    <a href="tentang.html" class="text-gray-600 hover:text-blue-600 transition">Tentang Kami</a>
+                    <a href="kontak.html" class="text-gray-600 hover:text-blue-600 transition">Kontak</a>
+                </div>
+                
+                <!-- Tombol Menu Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="outline-none">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menu Mobile (Awalnya Disembunyikan) -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-blue-700 bg-blue-50">Beranda</a>
+                <a href="layanan.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Layanan</a>
+                <a href="tentang.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Tentang Kami</a>
+                <a href="kontak.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Membangun ekonomi umat </h1>
+                    <p class="text-xl mb-8 opacity-90">Koperasi KSSP memberikan layanan simpan pinjam dengan bunga kompetitif dan proses mudah untuk membantu mewujudkan impian Anda.</p>
+                    <div class="flex space-x-4">
+                        <a href="#layanan" class="btn-primary px-8 py-3 rounded-full font-semibold text-white">Lihat Layanan</a>
+                        <a href="#kontak" class="bg-white px-8 py-3 rounded-full font-semibold text-blue-600 hover:bg-gray-100 transition">Hubungi Kami</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <img src="Picture1.jpg" alt="Hero Image" class="rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Section -->
+    <section id="layanan" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Layanan Kami</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Kami menyediakan berbagai layanan keuangan yang dapat membantu kebutuhan finansial Anda.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Simpanan -->
+                <div class="card p-6 shadow-sm skill-card h-100 card-hover transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-4">
+                        <i class="fas  fa-wallet text-4xl text-blue-600"></i>
+                    </div>
+                    <h4 class="text-center text-xl font-bold mb-4 text-gray-800">Simpanan</h4>
+                    <p class="text-gray-600 text-center">Tabungan dengan bunga kompetitif dan aman untuk masa depan Anda.</p>
+                    <div class="mt-6 text-center">
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Pelajari lebih lanjut →</a>
+                    </div>
+                </div>
+                
+                <!-- Pinjaman -->
+                <div class="card p-6 shadow-sm skill-card h-100 card-hover transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-hand-holding-usd text-4xl text-green-600"></i>
+                    </div>
+                    <h4 class="text-center text-xl font-bold mb-4 text-gray-800">Pinjaman</h4>
+                    <p class="text-gray-600 text-center">Pinjaman dengan proses mudah, bunga ringan, dan tenor fleksibel.</p>
+                    <div class="mt-6 text-center">
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Pelajari lebih lanjut →</a>
+                    </div>
+                </div>
+                
+                <!-- Investasi -->
+                <div class="card p-6 shadow-sm skill-card h-100 card-hover transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-chart-line text-4xl text-yellow-600"></i>
+                    </div>
+                    <h4 class="text-center text-xl font-bold mb-4 text-gray-800">Investasi</h4>
+                    <p class="text-gray-600 text-center">Produk investasi dengan return menarik dan risiko minimal.</p>
+                    <div class="mt-6 text-center">
+                        <a href="#" class="text-blue-600 font-medium hover:underline">Pelajari lebih lanjut →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="tentang" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <img src="480282353_937473955167353_7231620884552808062_n__1_-removebg-preview.png" alt="Tentang Kami" class="rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Tentang Koperasi KSSP</h2>
+                    <p class="text-gray-600 mb-6">Koperasi KSSP didirikan pada tahun 2010 dengan tujuan untuk memberikan solusi keuangan yang terjangkau bagi anggota dan masyarakat sekitar.</p>
+                    <p class="text-gray-600 mb-6">Dengan prinsip gotong royong dan kepercayaan, kami telah membantu ribuan anggota mencapai stabilitas keuangan dan mewujudkan impian mereka.</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-blue-100 p-4 rounded-lg">
+                            <h3 class="text-2xl font-bold text-blue-600">10+</h3>
+                            <p class="text-gray-600">Tahun Pengalaman</p>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <h3 class="text-2xl font-bold text-green-600">5.000+</h3>
+                            <p class="text-gray-600">Anggota</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section id="testimoni" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Apa Kata Mereka</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Testimoni dari anggota kami yang puas dengan layanan Koperasi KSSP.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/50x50?text=User1" alt="User" class="rounded-full h-12 w-12">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Budi Santoso</h4>
+                            <p class="text-gray-600 text-sm">Anggota sejak 2015</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Proses pinjaman di KSSP sangat mudah dan cepat. Bunga yang diberikan juga sangat kompetitif dibanding tempat lain."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/50x50?text=User2" alt="User" class="rounded-full h-12 w-12">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Siti Aminah</h4>
+                            <p class="text-gray-600 text-sm">Anggota sejak 2018</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Pelayanan sangat ramah dan profesional. Saya bisa mengajukan pinjaman untuk modal usaha dengan mudah."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/50x50?text=User3" alt="User" class="rounded-full h-12 w-12">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Agus Wijaya</h4>
+                            <p class="text-gray-600 text-sm">Anggota sejak 2016</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Bunga simpanan di KSSP lebih tinggi dari bank. Saya bisa menabung sambil mendapatkan return yang bagus."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="max-w-6xl mx-auto px-4 text-center" data-aos="zoom-in">
+            <h2 class="text-3xl font-bold mb-6">Siap Bergabung dengan Koperasi KSSP?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Daftarkan diri Anda sekarang dan nikmati berbagai manfaat keanggotaan kami.</p>
+            <a href="#" class="bg-white px-8 py-3 rounded-full font-semibold text-blue-600 hover:bg-gray-100 transition inline-block">Daftar Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Hubungi Kami</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Kami siap membantu Anda dengan segala pertanyaan tentang layanan kami.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Informasi Kontak</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Alamat</h4>
+                                    <p class="text-gray-600">Jl. Koperasi No. 123, Jakarta Selatan, DKI Jakarta 12345</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-blue-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Telepon</h4>
+                                    <p class="text-gray-600">(021) 12345678</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-blue-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-600">info@kssp-koperasi.co.id</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-blue-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Jam Operasional</h4>
+                                    <p class="text-gray-600">Senin - Jumat: 08.00 - 16.00 WIB<br>Sabtu: 08.00 - 14.00 WIB</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-10" data-aos="fade-left">
+                    <form class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nama Lengkap</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Nomor Telepon</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Pesan</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary px-6 py-3 rounded-lg font-semibold text-white w-full">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Koperasi KSSP</h3>
+                    <p class="text-gray-400">Memberikan solusi keuangan terbaik untuk masa depan yang lebih sejahtera.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="#layanan" class="text-gray-400 hover:text-white transition">Layanan</a></li>
+                        <li><a href="#tentang" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="#testimoni" class="text-gray-400 hover:text-white transition">Testimoni</a></li>
+                        <li><a href="#kontak" class="text-gray-400 hover:text-white transition">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Layanan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Simpanan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pinjaman</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Investasi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pendidikan Keuangan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Berlangganan newsletter kami untuk mendapatkan informasi terbaru.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Email Anda" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-blue-600 px-4 py-2 rounded-r-lg hover:bg-blue-700 transition"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Koperasi KSSP. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inisialisasi AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Smooth scrolling untuk anchor link
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+       const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Tutup menu mobile ketika mengklik link
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

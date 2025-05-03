@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - KSPPS PMA</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .mission-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .mission-item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: #3b82f6;
+            border-radius: 50%;
+        }
+        .mission-item:after {
+            content: counter(list-item);
+            counter-increment: list-item;
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: 0.75rem;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #e5e7eb;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            border: 4px solid #eff6ff;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <div>
+                        <img src="480282353_937473955167353_7231620884552808062_n__1_-removebg-preview.png" alt="Logo KSSP" class="w-[60px] h-[50px] rounded-full">
+                    </div>
+                    <div class="hidden md:flex items-center space-x-1">
+                        <span class="text-xl font-bold text-blue-600">Koperasi</span>
+                        <span class="text-xl font-bold text-gray-800">KSSP</span>
+                    </div>
+                </div>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Beranda</a>
+                    <a href="layanan.html" class="text-gray-600 hover:text-blue-600 transition">Layanan</a>
+                    <a href="tentang.html" class="text-blue-600 font-medium">Tentang Kami</a>
+                   <a href="kontak.html" class="text-gray-600 hover:text-blue-600 transition">Kontak</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="outline-none">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Beranda</a>
+                <a href="layanan.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Layanan</a>
+                <a href="tentang.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-700 bg-blue-50">Tentang Kami</a>
+               <a href="kontak.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="gradient-bg text-white py-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Tentang KSPPS PMA</h1>
+            <p class="text-xl max-w-3xl mx-auto">Koperasi Simpan Pinjam dan Pembiayaan Syariah Perambabulan Makmur Abadi</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Profil Section -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                         alt="Tim KSPPS PMA" 
+                         class="rounded-xl shadow-xl w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Siapa Kami?</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Koperasi Simpan Pinjam dan Pembiayaan Syariah Perambabulan Makmur Abadi (KSPPS PMA) adalah lembaga keuangan syariah yang berkomitmen untuk membangun ekonomi umat melalui prinsip-prinsip syariah dan gotong royong.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Berdiri sejak tahun 2010, kami telah berkembang menjadi salah satu koperasi syariah terpercaya dengan ribuan anggota yang tersebar di berbagai wilayah. Kami menyediakan berbagai produk dan layanan keuangan syariah untuk memenuhi kebutuhan finansial anggota dan masyarakat.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visi Misi Section -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Visi, Misi dan Tujuan</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Visi -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center card-hover transition duration-300">
+                    <div class="flex justify-center mb-4">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-eye text-blue-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Visi</h3>
+                    <p class="text-gray-600">"Membangun ekonomi umat"</p>
+                </div>
+
+                <!-- Misi -->
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition duration-300 md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-6">
+                            <i class="fas fa-bullseye text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Misi</h3>
+                    </div>
+                    <ol class="list-decimal pl-5 space-y-4 text-gray-600">
+                        <li class="mission-item">Meningkatkan kemampuan manajemen pengelola dan anggota dalam upaya mengembangkan potensi dan kemampuan usaha anggota khususnya dan masyarakat pada umumnya.</li>
+                        <li class="mission-item">Memberikan pelayanan prima dengan menyajikan teknologi digital sesuai kemajuan jaman yang mudah diakses dalam bertransaksi nyaman dan aman.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Tujuan -->
+            <div class="mt-12 bg-white p-8 rounded-xl shadow-md card-hover transition duration-300">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mr-6">
+                        <i class="fas fa-flag text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Tujuan</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mt-1">
+                            <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-blue-600 text-xs"></i>
+                            </div>
+                        </div>
+                        <p class="ml-3 text-gray-600">
+                            Memajukan kesejahteraan anggota pada khususnya dan masyarakat pada umumnya serta ikut membangun tatanan perekonomian nasional dalam rangka mewujudkan masyarakat utama yang maju, adil dan makmur, sesuai dengan syariat Islam dan UUD 1945.
+                        </p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mt-1">
+                            <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-blue-600 text-xs"></i>
+                            </div>
+                        </div>
+                        <p class="ml-3 text-gray-600">
+                            Dalam mencapai tujuan yang telah ditetapkan, Koperasi menyusun Rencana Strategis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sejarah Section -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Sejarah Kami</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <!-- Tahun 2010 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">2010</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">Pendirian KSPPS PMA</h4>
+                            <p class="text-gray-600">
+                                KSPPS PMA didirikan dengan tujuan membangun ekonomi umat melalui prinsip syariah dengan anggota awal sebanyak 50 orang.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Tahun 2015 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">2015</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">Ekspansi Layanan Digital</h4>
+                            <p class="text-gray-600">
+                                Meluncurkan layanan digital pertama untuk memudahkan anggota bertransaksi secara online.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Tahun 2020 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">2020</span>
+                                <div class="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Sekarang</div>
+                      
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">Penghargaan Koperasi Syariah Terbaik</h4>
+                            <p class="text-gray-600">
+                                Meraih penghargaan sebagai Koperasi Syariah Terbaik tingkat regional dengan jumlah anggota melebihi 5.000 orang.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Tahun 2023 -->
+                    <!-- <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">2023</span>
+                            <div class="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Sekarang</div>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">Transformasi Digital</h4>
+                            <p class="text-gray-600">
+                                Meluncurkan platform mobile banking lengkap dengan berbagai fitur pembiayaan syariah dan investasi.
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Tim Section -->
+<!-- Bagian Sejarah (gantikan bagian sebelumnya) -->
+<section class="mb-20">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-2">Sejarah Perjalanan Kami</h2>
+        <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+        <p class="text-gray-600 max-w-2xl mx-auto mt-4">Dari kelompok kecil penjahit hingga menjadi koperasi syariah nasional</p>
+    </div>
+
+    <div class="relative">
+        <!-- Garis Timeline -->
+        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-blue-100 transform -translate-x-1/2"></div>
+        
+        <!-- Timeline Items -->
+        <div class="space-y-16 md:space-y-8">
+            <!-- Tahun 1995 -->
+            <div class="relative md:flex items-center">
+                <div class="hidden md:block md:w-1/2 md:pr-12">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">1995</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Cikal Bakal Bamabupa</h4>
+                        <p class="text-gray-600">
+                            Beberapa remaja desa Babadan, Buyut, Mayung (Cirebon Utara/Gunungjati) dan Pangkalan (Weru/Plered) yang beraktivitas sebagai penjahit membentuk wadah bernama Bamabupa (Babadan, Mayung, Buyut, dan Pangkalan).
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center md:justify-start md:w-1/2 md:pl-12">
+                    <div class="w-16 h-16 rounded-full bg-blue-600 border-4 border-white shadow-md flex items-center justify-center">
+                        <i class="fas fa-tshirt text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <div class="md:hidden mt-4 bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">1995</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Cikal Bakal Bamabupa</h4>
+                    <p class="text-gray-600">
+                        Beberapa remaja desa Babadan, Buyut, Mayung (Cirebon Utara/Gunungjati) dan Pangkalan (Weru/Plered) yang beraktivitas sebagai penjahit membentuk wadah bernama Bamabupa (Babadan, Mayung, Buyut, dan Pangkalan).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tahun 1996 -->
+            <div class="relative md:flex items-center">
+                <div class="hidden md:block md:w-1/2 md:pr-12">
+                    <!-- Kosong untuk alignment -->
+                </div>
+                
+                <div class="flex justify-center md:justify-start md:w-1/2 md:pl-12">
+                    <div class="w-16 h-16 rounded-full bg-green-600 border-4 border-white shadow-md flex items-center justify-center">
+                        <i class="fas fa-users text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <div class="md:hidden mt-4 bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">1996</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">LEPMM Perambabulan</h4>
+                    <p class="text-gray-600">
+                        Membentuk Lembaga Ekonomi Produktif Masyarakat Mandiri (LEPMM) Perambabulan (Persatuan Remaja Penjahit Desa Mayung, Babadan, Buyut, dan Pangkalan).
+                    </p>
+                </div>
+                
+                <div class="hidden md:block md:w-1/2 md:pl-12">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">1996</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">LEPMM Perambabulan</h4>
+                        <p class="text-gray-600">
+                            Membentuk Lembaga Ekonomi Produktif Masyarakat Mandiri (LEPMM) Perambabulan (Persatuan Remaja Penjahit Desa Mayung, Babadan, Buyut, dan Pangkalan).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tahun 2001 -->
+            <div class="relative md:flex items-center">
+                <div class="hidden md:block md:w-1/2 md:pr-12">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">2001</span>
+                            <span class="ml-2 bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Legal Formal</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Koperasi Syariah Pertama</h4>
+                        <p class="text-gray-600">
+                            LEPMM menjadi Kelompok Serba Usaha (KSU) berpola Syariah dengan nama Koperasi Perambabulan Al-Qomariyah. 
+                            <br><br>
+                            <span class="font-medium">Badan Hukum:</span> 06/BH/DIS-KOP/V/2001<br>
+                            <span class="font-medium">SIUP:</span> No. 0388/10-23/PK/IX/2001<br>
+                            <!-- <span class="font-medium">TDP:</span> No. 10222650288 (8 Mei 2001) -->
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center md:justify-start md:w-1/2 md:pl-12">
+                    <div class="w-16 h-16 rounded-full bg-purple-600 border-4 border-white shadow-md flex items-center justify-center">
+                        <i class="fas fa-handshake text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <div class="md:hidden mt-4 bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">2001</span>
+                        <span class="ml-2 bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Legal Formal</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Koperasi Syariah Pertama</h4>
+                    <p class="text-gray-600">
+                        LEPMM menjadi Kelompok Serba Usaha (KSU) berpola Syariah dengan nama Koperasi Perambabulan Al-Qomariyah. 
+                        <br><br>
+                        <span class="font-medium">Badan Hukum:</span> 06/BH/DIS-KOP/V/2001<br>
+                        <span class="font-medium">SIUP:</span> No. 0388/10-23/PK/IX/2001<br>
+                        <span class="font-medium">TDP:</span> No. 10222650288 (8 Mei 2001)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tahun 2004 -->
+            <div class="relative md:flex items-center">
+                <div class="hidden md:block md:w-1/2 md:pr-12">
+                    <!-- Kosong untuk alignment -->
+                </div>
+                
+                <div class="flex justify-center md:justify-start md:w-1/2 md:pl-12">
+                    <div class="w-16 h-16 rounded-full bg-yellow-600 border-4 border-white shadow-md flex items-center justify-center">
+                        <i class="fas fa-piggy-bank text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <div class="md:hidden mt-4 bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded-full">2004</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Transformasi ke KSPS</h4>
+                    <p class="text-gray-600">
+                        KSU berpola syariah menjadi Koperasi Simpan Pinjam Syariah (KSPS) Perambabulan Al-Qomariyah.
+                    </p>
+                </div>
+                
+                <div class="hidden md:block md:w-1/2 md:pl-12">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded-full">2004</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Transformasi ke KSPS</h4>
+                        <p class="text-gray-600">
+                            KSU berpola syariah menjadi Koperasi Simpan Pinjam Syariah (KSPS) Perambabulan Al-Qomariyah.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tahun 2014 -->
+            <div class="relative md:flex items-center">
+                <div class="hidden md:block md:w-1/2 md:pr-12">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">2014</span>
+                            <span class="ml-2 bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Ekspansi</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Perubahan & Ekspansi</h4>
+                        <p class="text-gray-600">
+                            KJKS berubah menjadi Koperasi Simpan Pinjam Syariah (KSPS) dengan nama Perambabulan. 
+                            <br><br>
+                            Membuka cabang di dua lokasi:
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>Pasar Mundu</li>
+                                <li>Pasar Celancang</li>
+                            </ul>
+                            <br>
+                            Mulai membuka pembiayaan syariah untuk anggota.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center md:justify-start md:w-1/2 md:pl-12">
+                    <div class="w-16 h-16 rounded-full bg-red-600 border-4 border-white shadow-md flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <div class="md:hidden mt-4 bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">2014</span>
+                        <span class="ml-2 bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Ekspansi</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Perubahan & Ekspansi</h4>
+                    <p class="text-gray-600">
+                        KJKS berubah menjadi Koperasi Simpan Pinjam Syariah (KSPS) dengan nama Perambabulan. 
+                        <br><br>
+                        Membuka cabang di dua lokasi:
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>Pasar Mundu</li>
+                            <li>Pasar Celancang</li>
+                        </ul>
+                        <br>
+                        Mulai membuka pembiayaan syariah untuk anggota.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tahun 2015 -->
+            <div class="relative md:flex items-center">
+                <div class="hidden md:block md:w-1/2 md:pr-12">
+                    <!-- Kosong untuk alignment -->
+                </div>
+                
+                <div class="flex justify-center md:justify-start md:w-1/2 md:pl-12">
+                    <div class="w-16 h-16 rounded-full bg-indigo-600 border-4 border-white shadow-md flex items-center justify-center">
+                        <i class="fas fa-file-contract text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <div class="md:hidden mt-4 bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full">2015</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Legalitas KSPPS</h4>
+                    <p class="text-gray-600">
+                        Resmi menjadi KSPPS Perambabulan dengan Badan Hukum: 08/BH/PAD/KUMKM/2015.
+                    </p>
+                </div>
+                
+                <div class="hidden md:block md:w-1/2 md:pl-12">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full">2015</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Legalitas KSPPS</h4>
+                        <p class="text-gray-600">
+                            Resmi menjadi KSPPS Perambabulan dengan Badan Hukum: 08/BH/PAD/KUMKM/2015.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tahun 2022 -->
+            <div class="relative md:flex items-center">
+                <div class="hidden md:block md:w-1/2 md:pr-12">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-pink-100 text-pink-800 text-sm font-semibold px-3 py-1 rounded-full">2022</span>
+                            <span class="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Nasional</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Menjadi Koperasi Nasional</h4>
+                        <p class="text-gray-600">
+                            Sesuai Kepmenkumham RI No. AHU-0000425.Ah.01.38.Tahun 2022, koperasi menjadi koperasi nasional dengan daerah kerja seluruh wilayah Indonesia.
+                            <br><br>
+                            Perubahan Anggaran Dasar melahirkan nama baru: <span class="font-semibold">Perambabulan Makmur Abadi</span> yang disahkan 20 Mei 2022.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center md:justify-start md:w-1/2 md:pl-12">
+                    <div class="w-16 h-16 rounded-full bg-pink-600 border-4 border-white shadow-md flex items-center justify-center">
+                        <i class="fas fa-flag text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <div class="md:hidden mt-4 bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-pink-100 text-pink-800 text-sm font-semibold px-3 py-1 rounded-full">2022</span>
+                        <span class="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Nasional</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Menjadi Koperasi Nasional</h4>
+                    <p class="text-gray-600">
+                        Sesuai Kepmenkumham RI No. AHU-0000425.Ah.01.38.Tahun 2022, koperasi menjadi koperasi nasional dengan daerah kerja seluruh wilayah Indonesia.
+                        <br><br>
+                        Perubahan Anggaran Dasar melahirkan nama baru: <span class="font-semibold">Perambabulan Makmur Abadi</span> yang disahkan 20 Mei 2022.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tahun 2023 -->
+            <div class="relative md:flex items-center">
+                <div class="hidden md:block md:w-1/2 md:pr-12">
+                    <!-- Kosong untuk alignment -->
+                </div>
+                
+                <div class="flex justify-center md:justify-start md:w-1/2 md:pl-12">
+                    <div class="w-16 h-16 rounded-full bg-teal-600 border-4 border-white shadow-md flex items-center justify-center">
+                        <i class="fas fa-building text-white text-xl"></i>
+                    </div>
+                </div>
+                
+                <div class="md:hidden mt-4 bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-teal-100 text-teal-800 text-sm font-semibold px-3 py-1 rounded-full">2023</span>
+                        <span class="ml-2 bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Sekarang</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Relokasi Kantor Cabang</h4>
+                    <p class="text-gray-600">
+                        Kantor Cabang Pasar Mundu pindah ke lokasi baru:
+                        <br><br>
+                        <span class="font-medium">Alamat:</span> Jalan K.H. Wahid Hasyim No.55, Mertapada Kulon, Kec. Astanajapura, Kabupaten Cirebon, Jawa Barat 45181
+                    </p>
+                </div>
+                
+                <div class="hidden md:block md:w-1/2 md:pl-12">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-2">
+                            <span class="bg-teal-100 text-teal-800 text-sm font-semibold px-3 py-1 rounded-full">2023</span>
+                            <span class="ml-2 bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Sekarang</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Relokasi Kantor Cabang</h4>
+                        <p class="text-gray-600">
+                            Kantor Cabang Pasar Mundu pindah ke lokasi baru:
+                            <br><br>
+                            <span class="font-medium">Alamat:</span> Jalan K.H. Wahid Hasyim No.55, Mertapada Kulon, Kec. Astanajapura, Kabupaten Cirebon, Jawa Barat 45181
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Koperasi KSSP</h3>
+                    <p class="text-gray-400">Memberikan solusi keuangan terbaik untuk masa depan yang lebih sejahtera.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="layanan.html" class="text-gray-400 hover:text-white transition">Layanan</a></li>
+                        <li><a href="tentang.html" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="testimoni.html" class="text-gray-400 hover:text-white transition">Testimoni</a></li>
+                        <li><a href="kontak.html" class="text-gray-400 hover:text-white transition">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Layanan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Simpanan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pinjaman</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Investasi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pendidikan Keuangan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Berlangganan newsletter kami untuk mendapatkan informasi terbaru.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Email Anda" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-blue-600 px-4 py-2 rounded-r-lg hover:bg-blue-700 transition"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Koperasi KSSP. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    
+<script>
+    // Toggle sejarah content
+    document.querySelectorAll('.sejarah-toggle').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Toggle content visibility
+            content.classList.toggle('hidden');
+            
+            // Rotate icon
+            icon.classList.toggle('rotate-180');
+            
+            // Change background when expanded
+            button.classList.toggle('bg-gray-50');
+        });
+    });
+</script>
+</body>
+</html>

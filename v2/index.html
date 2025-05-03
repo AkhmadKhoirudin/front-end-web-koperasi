@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koperasi Sejahtera Bersama</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+<style>
+    html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .navbar {
+            z-index: 1030;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            background-color: white;
+            padding: 1rem;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        .service-card img {
+            height: 220px; /* Tinggi gambar seragam */
+            object-fit: cover; /* Gambar mengisi area tanpa merusak rasio */
+            width: 100%;
+        }
+ </style>
+</head>
+<body class="font-sans">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo dan Nama Koperasi (Kiri) -->
+                <div class="flex items-center space-x-4">
+                    <div>
+                        <img src="480282353_937473955167353_7231620884552808062_n__1_-removebg-preview.png" 
+                             alt="Logo KSSP" 
+                             class="w-[60px] h-[50px] rounded-full"
+                             loading="lazy">
+                    </div>
+                    <div class="hidden md:flex items-center">
+                        <span class="text-xl font-bold text-gray-800">Perambabulan Makmur Abadi</span>
+                    </div>
+                </div>
+                
+                <!-- Menu Desktop (Kanan) -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="text-gray-600 hover:text-blue-600 transition py-2 px-3">Beranda</a>
+                    <a href="#services" class="text-gray-600 hover:text-blue-600 transition py-2 px-3">Layanan</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition py-2 px-3">Tentang Kami</a>
+                    <a href="#testimoni" class="text-gray-600 hover:text-blue-600 transition py-2 px-3">Testimoni</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition py-2 px-3">Kontak</a>
+                </div>
+                
+                <!-- Tombol Menu Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" 
+                            class="outline-none mobile-menu-button p-2"
+                            aria-label="Toggle menu"
+                            aria-expanded="false">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Beranda</a>
+                <a href="#services" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Layanan</a>
+                <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Tentang Kami</a>
+                <a href="#testimoni" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Testimoni</a>
+                <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-4 fw-bold mb-4">KSPPS Perambabulan Makmur Abadi</h1>
+                    <p class="lead mb-4">Membangun ekonomi anggota melalui prinsip koperasi yang berkelanjutan dan berkeadilan.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#about" class="btn btn-primary btn-lg px-4">Pelajari Lebih Lanjut</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg px-4">Hubungi Kami</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1511&q=80" alt="Hero Image" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tentang Kami" class="img-fluid rounded-3 shadow">
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="fw-bold mb-4 text-green-800">Tentang Koperasi Kami</h2>
+                    <p class="lead mb-4">Koperasi Sejahtera Bersama didirikan pada tahun 2010 dengan tujuan untuk meningkatkan kesejahteraan ekonomi anggota dan masyarakat sekitar.</p>
+                    <p class="mb-4">Dengan prinsip gotong royong dan kekeluargaan, kami telah membantu ribuan anggota untuk mengembangkan usaha mereka dan meningkatkan taraf hidup.</p>
+                    <div class="row text-center">
+                        <div class="col-4" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="p-3 bg-white rounded shadow-sm">
+                                <h3 class="text-green-600 fw-bold">1.250+</h3>
+                                <p class="mb-0">Anggota</p>
+                            </div>
+                        </div>
+                        <div class="col-4" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="p-3 bg-white rounded shadow-sm">
+                                <h3 class="text-green-600 fw-bold">Rp 25M+</h3>
+                                <p class="mb-0">Aset</p>
+                            </div>
+                        </div>
+                        <div class="col-4" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="p-3 bg-white rounded shadow-sm">
+                                <h3 class="text-green-600 fw-bold">12</h3>
+                                <p class="mb-0">Cabang</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-white">
+        <div class="container py-5">
+          <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold text-green-800">Layanan Kami</h2>
+            <p class="lead">Berbagai layanan yang kami sediakan untuk kesejahteraan anggota</p>
+          </div>
+      
+          <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-card card h-100 border-0 shadow-sm rounded-3 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80" class="card-img-top" alt="Simpanan">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold text-green-800">Simpanan</h5>
+                  <p class="card-text">Program simpanan dengan bunga kompetitif dan aman untuk masa depan Anda.</p>
+                  <a href="#" class="btn btn-sm btn-outline-primary">Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-card card h-100 border-0 shadow-sm rounded-3 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1601599561213-832382fd07ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1528&q=80" class="card-img-top" alt="Pinjaman">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold text-green-800">Pinjaman</h5>
+                  <p class="card-text">Pinjaman dengan bunga ringan untuk modal usaha, pendidikan, atau kebutuhan mendesak.</p>
+                  <a href="#" class="btn btn-sm btn-outline-primary">Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-card card h-100 border-0 shadow-sm rounded-3 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80" class="card-img-top" alt="Pelatihan">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold text-green-800">Pelatihan</h5>
+                  <p class="card-text">Program pelatihan dan pengembangan keterampilan untuk meningkatkan kapasitas anggota.</p>
+                  <a href="#" class="btn btn-sm btn-outline-primary">Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+ 
+
+    <!-- Testimonials Section -->
+    <section id="testimoni" class="py-5 bg-gray-200 text-black">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Apa Kata Mereka?</h2>
+                <p class="lead">Testimoni dari anggota koperasi kami</p>
+            </div>
+            
+            <!-- Swiper Testimonials -->
+            <div class="swiper testimonialSwiper" data-aos="fade-up">
+                <div class="swiper-wrapper pb-5">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card p-4 rounded-3 h-100">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Testimoni 1" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h5 class="mb-0">Siti Rahayu</h5>
+                                    <small>Anggota sejak 2015</small>
+                                </div>
+                            </div>
+                            <p>"Berkat pinjaman dari koperasi, saya bisa mengembangkan warung sembako saya. Sekarang omset saya meningkat 3x lipat."</p>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card p-4 rounded-3 h-100">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Testimoni 2" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h5 class="mb-0">Budi Santoso</h5>
+                                    <small>Anggota sejak 2018</small>
+                                </div>
+                            </div>
+                            <p>"Pelatihan kewirausahaan dari koperasi sangat bermanfaat. Saya bisa membuat business plan yang baik untuk usaha ternak saya."</p>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card p-4 rounded-3 h-100">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Testimoni 3" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h5 class="mb-0">Dewi Lestari</h5>
+                                    <small>Anggota sejak 2020</small>
+                                </div>
+                            </div>
+                            <p>"Produk-produk koperasi sangat membantu pemasaran hasil kerajinan saya. Sekarang saya punya pasar yang lebih luas."</p>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card p-4 rounded-3 h-100">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Testimoni 4" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h5 class="mb-0">Ahmad Fauzi</h5>
+                                    <small>Anggota sejak 2017</small>
+                                </div>
+                            </div>
+                            <p>"Bunga simpanan di koperasi lebih tinggi dari bank, dan pelayanannya sangat ramah. Saya sangat puas menjadi anggota."</p>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <h2 class="fw-bold text-green-800 mb-4">Hubungi Kami</h2>
+                    <p class="mb-4">Silakan hubungi kami untuk informasi lebih lanjut tentang keanggotaan, produk, atau layanan kami.</p>
+                    
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-3"><i class="fas fa-map-marker-alt me-2 text-green-600"></i> Alamat</h5>
+                        <p>Jl. Koperasi No. 123, Kelurahan Sejahtera, Kecamatan Makmur, Kota Bahagia</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-3"><i class="fas fa-phone-alt me-2 text-green-600"></i> Telepon</h5>
+                        <p>(021) 12345678</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-3"><i class="fas fa-envelope me-2 text-green-600"></i> Email</h5>
+                        <p>info@koperasisejahtera.id</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-3"><i class="fas fa-clock me-2 text-green-600"></i> Jam Operasional</h5>
+                        <p>Senin - Jumat: 08.00 - 16.00 WIB<br>Sabtu: 08.00 - 14.00 WIB</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card border-0 shadow-sm rounded-3">
+                        <div class="card-body p-4">
+                            <h3 class="card-title fw-bold mb-4">Kirim Pesan</h3>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nama Lengkap</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Nomor Telepon</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Pesan</label>
+                                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Kirim Pesan</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4">Koperasi Sejahtera Bersama</h5>
+                    <p>Membangun ekonomi anggota melalui prinsip koperasi yang berkelanjutan dan berkeadilan.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-4">Tautan Cepat</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Beranda</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">Tentang Kami</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Layanan</a></li>
+                        <li class="mb-2"><a href="#products" class="text-white text-decoration-none">Produk</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-4">Layanan</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Simpanan</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Pinjaman</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Pelatihan</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Konsultasi Bisnis</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-4">Newsletter</h5>
+                    <p>Berlangganan newsletter kami untuk mendapatkan informasi terbaru.</p>
+                    <form class="mt-4">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email Anda" required>
+                            <button class="btn btn-primary" type="submit">OK</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Koperasi Sejahtera Bersama. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> by Koperasi Team</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-primary rounded-circle shadow back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Initialize Swiper
+        const productsSwiper = new Swiper('.productsSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: '.productsSwiper .swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                },
+            }
+        });
+        
+        const testimonialSwiper = new Swiper('.testimonialSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: '.testimonialSwiper .swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+            }
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+// Toggle saat tombol ditekan
+mobileMenuButton.addEventListener('click', function(event) {
+    event.stopPropagation(); // Supaya klik tombol tidak dianggap klik di luar
+    mobileMenu.classList.toggle('active');
+});
+
+// Tutup saat klik link di dalam menu
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+    }); 
+});
+
+// Tutup saat klik di luar menu dan tombol
+document.addEventListener('click', function(event) {
+    // Jika klik BUKAN di dalam mobileMenu DAN BUKAN tombol mobileMenuButton
+    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+        mobileMenu.classList.remove('active');
+    }
+});
+
+
+    </script>
+</body>
+</html>

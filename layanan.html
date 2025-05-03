@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Koperasi KSSP - Produk dan Layanan</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .popup-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <div>
+                        <img src="480282353_937473955167353_7231620884552808062_n__1_-removebg-preview.png" alt="Logo KSSP" class="w-[60px] h-[50px] rounded-full">
+                    </div>
+                    <div class="hidden md:flex items-center space-x-1">
+                        <span class="text-xl font-bold text-blue-600">Koperasi</span>
+                        <span class="text-xl font-bold text-gray-800">KSSP</span>
+                    </div>
+                </div>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Beranda</a>
+                    <a href="layanan.html" class="text-blue-600 font-medium">Layanan</a>
+                    <a href="tentang.html" class="text-gray-600 hover:text-blue-600 transition">Tentang Kami</a>
+                  <a href="kontak.html" class="text-gray-600 hover:text-blue-600 transition">Kontak</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="outline-none">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Beranda</a>
+                <a href="layanan.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-700 bg-blue-50">Layanan</a>
+                <a href="tentang.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Tentang Kami</a>
+               <a href="kontak.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="gradient-bg text-white py-16">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Produk dan Layanan KSPPS PMA</h1>
+            <p class="text-xl max-w-3xl mx-auto">Berbagai produk simpanan dan pembiayaan syariah untuk memenuhi kebutuhan finansial Anda</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Simpanan Section -->
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">PRODUK DAN LAYANAN SIMPANAN</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- TAMASKOP Card -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4">
+                            <i class="fas fa-wallet text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 text-center mb-2">TAMASKOP</h3>
+                        <p class="text-gray-600 text-center mb-4">Tabungan Anggota Masyarakat Koperasi</p>
+                        <button onclick="openPopup('popup1')" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TAKOPNAS Card -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mx-auto mb-4">
+                            <i class="fas fa-graduation-cap text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 text-center mb-2">TAKOPNAS</h3>
+                        <p class="text-gray-600 text-center mb-4">Tabungan Koperasi Anak Sekolah</p>
+                        <button onclick="openPopup('popup2')" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TAQORUB Card -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mx-auto mb-4">
+                            <i class="fas fa-hands-helping text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 text-center mb-2">TAQORUB</h3>
+                        <p class="text-gray-600 text-center mb-4">Tabungan Qurban</p>
+                        <button onclick="openPopup('popup3')" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+
+                <!-- WADIAH YAD DHAMANAH Card -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4">
+                            <i class="fas fa-hand-holding-usd text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 text-center mb-2">WADIAH YAD DHAMANAH</h3>
+                        <p class="text-gray-600 text-center mb-4">Tabungan Wadiah</p>
+                        <button onclick="openPopup('popup4')" class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+
+                <!-- WADIAH YAD AMANAH Card -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center w-16 h-16 bg-yellow-100 rounded-full mx-auto mb-4">
+                            <i class="fas fa-box-open text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 text-center mb-2">WADIAH YAD AMANAH</h3>
+                        <p class="text-gray-600 text-center mb-4">Titipan Barang</p>
+                        <button onclick="openPopup('popup5')" class="w-full bg-yellow-600 text-white py-2 rounded-lg hover:bg-yellow-700 transition">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TAHARA Card -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mx-auto mb-4">
+                            <i class="fas fa-moon text-pink-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 text-center mb-2">TAHARA</h3>
+                        <p class="text-gray-600 text-center mb-4">Tabungan Hari Raya</p>
+                        <button onclick="openPopup('popup6')" class="w-full bg-pink-600 text-white py-2 rounded-lg hover:bg-pink-700 transition">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pembiayaan Section -->
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">PRODUK PEMBIAYAAN</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- MURABAHAH Card -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4">
+                            <i class="fas fa-handshake text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 text-center mb-2">MURABAHAH</h3>
+                        <p class="text-gray-600 text-center mb-4">Pembiayaan Jual Beli</p>
+                        <button onclick="openPopup('popup7')" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+
+                <!-- MUSYARAKAH Card -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mx-auto mb-4">
+                            <i class="fas fa-people-arrows text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 text-center mb-2">MUSYARAKAH</h3>
+                        <p class="text-gray-600 text-center mb-4">Pembiayaan Kemitraan</p>
+                        <button onclick="openPopup('popup8')" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
+                            Lihat Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Popup Modals -->
+    <!-- TAMASKOP Popup -->
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-gray-800">TAMASKOP (Tabungan Anggota Masyarakat Koperasi)</h3>
+                <button onclick="closePopup('popup1')" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <h4 class="font-semibold text-gray-800">Bentuk Akad : Mudharabah Muthlaqah</h4>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800">Ketentuan :</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600 mt-2">
+                        <li>Tamaskop adalah jenis Tabungan sukarela dengan akad Mudharabah Muthlaqah di mana manajemen diberikan hak kelola secara mutlak.</li>
+                        <li>Anggota dapat menarik dananya kapan saja selama jam kantor buka dengan ketentuan besarnya penarikan maksimal akan diatur dalam keputusan pengurus atau manajer.</li>
+                        <li>Anggota dapat menyetorkan dananya kapan saja baik langsung ataupun secara online melalui Perambabulan Mobile.</li>
+                        <li>Tamaskop diberikan jasa bagi hasil setiap akhir bulan sesuai dengan porsi nisbah bagi hasil yang dituangkan dalam penawaran ilustrasi tabel Jasa Bagi Hasil, perhitungan porsi bagi hasil sewaktu waktu berubah tanpa pemberitahuan.</li>
+                        <li>Tamaskop dapat dijadikan transaksi pembayaran (tagihan listrik, telefon, pembelian pulsa, speedy, angsuran kendaraan, pembayaran simpanan pokok dan wajib, secara online melalui Perambabulan Mobile Cuso pay.</li>
+                        <li>Tamaskop dikenakan biaya pemeliharaan rekening sebesar Rp.1.000 setiap bulan.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAKOPNAS Popup -->
+    <div id="popup2" class="popup">
+        <div class="popup-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-gray-800">TAKOPNAS (Tabungan Koperasi Anak Sekolah)</h3>
+                <button onclick="closePopup('popup2')" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <h4 class="font-semibold text-gray-800">Bentuk Akad : Mudharabah Muthlaqah</h4>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800">Ketentuan :</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600 mt-2">
+                        <li>Takopnas adalah jenis Tabungan sukarela dengan akad Mudharabah Muthlaqah di mana manajemen diberikan hak kelola secara mutlak selama kurun waktu tertentu sesuai dengan akad pembukaan rekening dan dapat diperpanjang.</li>
+                        <li>Anggota dapat menyetorkan dananya kapan saja secara online melalui Perambabulan Mobile atau selama jam kantor buka dan produk ini tidak bisa ditarik sewaktu waktu kecuali masa penempatan berakhir sesuai akad pembukaan rekening.</li>
+                        <li>Takopnas ini akan diberikan jasa bagi hasil setiap akhir bulan sesuai dengan porsi nisbah bagi hasil sesuai kesepakatan antara shahibul maal dengan mudharib ketika pembukaan rekening.</li>
+                        <li>Besarnya porsi jasa bagi hasil akan dituangkan dalam penawaran ilustrasi tabel Jasa Bagi hasil dari hasil perhitungan porsi bagi hasil oleh keputusan pengurus atau manajer dan sewaktu waktu berubah tanpa pemberitahuan.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAQORUB Popup -->
+    <div id="popup3" class="popup">
+        <div class="popup-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-gray-800">TAQORUB (Tabungan Qurban)</h3>
+                <button onclick="closePopup('popup3')" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <h4 class="font-semibold text-gray-800">Bentuk Akad : Mudharabah Muthlaqah</h4>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800">Ketentuan :</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-600 mt-2">
+                        <li>Taqorub adalah jenis tabungan sukarela dengan akad Mudharabah Muthlaqah di mana shahibul maal menitipkan dananya untuk pembelian hewan qurban dan pihak manajemen diberikan hak kelola secara mutlak selama kurun waktu tertentu sesuai dengan akad pembukaan rekening dan dapat diperpanjang.</li>
+                        <li>Anggota dapat menyetorkan dananya kapan saja/secara online melalui Perambabulan Mobile atau selama jam kantor buka dan produk ini tidak bisa ditarik sewaktu waktu kecuali menjelang hari raya Iduladha dan apabila dana telah mencukupi untuk pembelian hewan kurban sesuai akad pembukaan rekening dan bisa diperpanjang secara otomatis bila dana tersebut belum mencukupi.</li>
+                        <li>Taqorub ini akan diberikan jasa bagi hasil setiap akhir bulan sesuai dengan porsi nisbah bagi hasil sesuai kesepakatan antara shahibul maal dengan mudharib ketika pembukaan rekening.</li>
+                        <li>Besarnya porsi jasa bagi hasil akan dituangkan dalam penawaran ilustrasi tabel Jasa Bagi Hasil dari hasil perhitungan porsi bagi hasil oleh keputusan pengurus atau manajer dan sewaktu waktu berubah tanpa pemberitahuan.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Koperasi KSSP</h3>
+                    <p class="text-gray-400">Memberikan solusi keuangan terbaik untuk masa depan yang lebih sejahtera.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="layanan.html" class="text-gray-400 hover:text-white transition">Layanan</a></li>
+                        <li><a href="tentang.html" class="text-gray-400 hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="testimoni.html" class="text-gray-400 hover:text-white transition">Testimoni</a></li>
+                        <li><a href="kontak.html" class="text-gray-400 hover:text-white transition">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Layanan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Simpanan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pinjaman</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Investasi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pendidikan Keuangan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Berlangganan newsletter kami untuk mendapatkan informasi terbaru.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Email Anda" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-blue-600 px-4 py-2 rounded-r-lg hover:bg-blue-700 transition"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Koperasi KSSP. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Popup functions dengan animasi
+        function openPopup(id) {
+            const popup = document.getElementById(id);
+            const content = popup.querySelector('.popup-content');
+            
+            popup.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Trigger reflow untuk memastikan animasi berjalan
+            void popup.offsetWidth;
+            
+            // Tambahkan class show untuk animasi
+            content.classList.add('show');
+        }
+
+        function closePopup(id) {
+            const popup = document.getElementById(id);
+            const content = popup.querySelector('.popup-content');
+            
+            // Hapus class show untuk animasi keluar
+            content.classList.remove('show');
+            
+            // Tunggu animasi selesai sebelum menyembunyikan popup
+            setTimeout(() => {
+                popup.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        // Close popup when clicking outside content
+        window.onclick = function(event) {
+            if (event.target.className === 'popup') {
+                closePopup(event.target.id);
+            }
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
